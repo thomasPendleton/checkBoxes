@@ -14,3 +14,79 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  width: 200px;
+  
+
+}
+
+.toggle {
+  visibility: hidden;
+}
+
+.label {
+  width: 80px;
+  height: 40px;
+  background-color: #d0d0d0;
+  border-radius: 50px;
+  display: inline-block;
+  margin: 0 15px 0;
+  cursor: pointer;
+  position: relative;
+  /* box-shadow: -2px 3px 3px rgba(0, 0, 0, 0.3); */
+  
+ 
+}
+
+.toggle:checked + .label{
+  background-color: #8e44ad;
+}
+
+.ball {
+  background-color: rgba(255, 255, 255, 0.123);
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  align-items: center;
+  justify-content: center;
+  animation: slideOff 0.3s linear forwards;
+  box-shadow: -2px 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+.toggle:checked + .label .ball {
+  animation: slideOn 0.3s linear forwards;
+}
+
+
+
+@keyframes slideOn {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1);
+  }
+  100% {
+    transform: translateX(40px) scale(1);
+  }
+
+}
+@keyframes slideOff {
+  0% {
+    transform: translateX(40px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+
+}
